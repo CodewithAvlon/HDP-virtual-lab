@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Calculators — HDP Virtual Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+html,body{height:100%;overflow:hidden;margin:0;padding:0;}
+body{display:flex;background:var(--bg);color:var(--text);font-family:'Space Mono',monospace;}
+.page-area{flex:1;overflow-y:auto;overflow-x:hidden;min-width:0;height:100vh;}
+
+</style></head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <div class="sb-toggle" id="sb-btn" onclick="toggleSidebar()">❮</div>
+  <div class="sb-logo"><div class="sb-logo-icon">HDP</div><div class="sb-logo-text sb-hide">Virtual<br>Physics Lab</div></div>
+  <div class="sb-section-title sb-hide">Main Sections</div>
+  <div class="sb-nav-item active" onclick="goTo('home')" data-page="home" id="nav-home"><span class="icon">🏠</span><span class="sb-hide">Home</span></div>
+  <div class="sb-nav-item" onclick="goTo('theory')" data-page="theory" id="nav-theory"><span class="icon">📖</span><span class="sb-hide">Theory</span></div>
+  <div class="sb-nav-item" onclick="goTo('system')" data-page="system" id="nav-system"><span class="icon">⚙️</span><span class="sb-hide">HDP System</span></div>
+  <div class="sb-nav-item" onclick="goTo('oscilloscope')" data-page="oscilloscope" id="nav-oscilloscope"><span class="icon">📡</span><span class="sb-hide">Oscilloscope</span></div>
+  <div class="sb-nav-item" onclick="goTo('calculators')" data-page="calculators" id="nav-calculators"><span class="icon">🧮</span><span class="sb-hide">Calculators</span></div>
+  <div class="sb-nav-item" onclick="goTo('materials')" data-page="materials" id="nav-materials"><span class="icon">🔬</span><span class="sb-hide">Materials</span></div>
+  <div class="sb-nav-item" onclick="goTo('applications')" data-page="applications" id="nav-applications"><span class="icon">🌐</span><span class="sb-hide">Applications</span></div>
+  <div class="sb-divider"></div>
+  <div class="sb-section-title sb-hide">🧪 Experiments</div>
+  <div class="sb-exp-card" id="nav-exp-glass" onclick="goTo('exp-glass')" data-page="exp-glass">
+    <div class="sb-exp-icon">🪟</div>
+    <div class="sb-hide"><div class="sb-exp-title">Exp 1: Glass Break</div><div class="sb-exp-sub">Anti-theft vibration<br>detection via PZT</div><span class="sb-exp-badge">LAB</span></div>
+  </div>
+  <div class="sb-exp-card" id="nav-exp-car" onclick="goTo('exp-car')" data-page="exp-car">
+    <div class="sb-exp-icon">🚗</div>
+    <div class="sb-hide"><div class="sb-exp-title">Exp 2: Car Knock</div><div class="sb-exp-sub">Reverse collision<br>bumper sensor</div><span class="sb-exp-badge">LAB</span></div>
+  </div>
+  <div class="sb-divider"></div>
+  <div style="padding:.7rem .9rem;line-height:1.7;flex-shrink:0;" class="sb-hide"><div style="font-size:.55rem;color:var(--dim);">Team HDP · 2025<br>Harmonic Detection<br>Piezo System</div></div>
+</aside>
+<div class="page-area">
+  <div class="page-header">
+    <span class="ph-crumb">HDP Lab / <span>Calculators</span></span>
+    <span class="ph-title">🧮 Calculators</span>
+  </div>
+<div class="page-body"><div class="section-tag">Physics Engine</div>
+  <h2 class="section-title">Working Calculations</h2>
+  <div class="divider"></div>
+  <p style="font-size:.78rem;color:var(--dim);margin-bottom:2.5rem;max-width:700px;line-height:1.8;">
+    Every number you saw in the simulations above comes from these real physics formulas.
+    Each calculator below shows <strong style="color:#fff">exactly where it is used</strong> in the HDP system —
+    from the moment vibration hits the sensor to the LED lighting up.
+  </p>
+
+  <!-- ── CALC FLOW DIAGRAM ── -->
+  <div style="display:flex;align-items:center;flex-wrap:wrap;gap:0;margin-bottom:3rem;background:var(--bg);border:1px solid rgba(0,245,212,.1);border-radius:12px;overflow:hidden;">
+    <div style="flex:1;min-width:120px;padding:1rem .8rem;text-align:center;border-right:1px solid rgba(0,245,212,.08);">
+      <div style="font-size:1.4rem;">💥</div>
+      <div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent);margin-top:.3rem;">STEP 1</div>
+      <div style="font-size:.65rem;color:#fff;margin-top:.2rem;">Force Applied</div>
+      <div style="font-size:.6rem;color:var(--dim);">F = m·a</div>
+    </div>
+    <div style="color:var(--accent);font-size:.9rem;padding:.3rem;">→</div>
+    <div style="flex:1;min-width:120px;padding:1rem .8rem;text-align:center;border-right:1px solid rgba(0,245,212,.08);">
+      <div style="font-size:1.4rem;">⚡</div>
+      <div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent);margin-top:.3rem;">STEP 2</div>
+      <div style="font-size:.65rem;color:#fff;margin-top:.2rem;">Charge Generated</div>
+      <div style="font-size:.6rem;color:var(--dim);">Q = d₃₃ × F</div>
+    </div>
+    <div style="color:var(--accent);font-size:.9rem;padding:.3rem;">→</div>
+    <div style="flex:1;min-width:120px;padding:1rem .8rem;text-align:center;border-right:1px solid rgba(0,245,212,.08);">
+      <div style="font-size:1.4rem;">🔋</div>
+      <div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent);margin-top:.3rem;">STEP 3</div>
+      <div style="font-size:.65rem;color:#fff;margin-top:.2rem;">Voltage Output</div>
+      <div style="font-size:.6rem;color:var(--dim);">V = Q / C</div>
+    </div>
+    <div style="color:var(--accent);font-size:.9rem;padding:.3rem;">→</div>
+    <div style="flex:1;min-width:120px;padding:1rem .8rem;text-align:center;border-right:1px solid rgba(0,245,212,.08);">
+      <div style="font-size:1.4rem;">📶</div>
+      <div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent);margin-top:.3rem;">STEP 4</div>
+      <div style="font-size:.65rem;color:#fff;margin-top:.2rem;">Amplify & Filter</div>
+      <div style="font-size:.6rem;color:var(--dim);">SNR · Gain</div>
+    </div>
+    <div style="color:var(--accent);font-size:.9rem;padding:.3rem;">→</div>
+    <div style="flex:1;min-width:120px;padding:1rem .8rem;text-align:center;">
+      <div style="font-size:1.4rem;">🔴</div>
+      <div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent);margin-top:.3rem;">STEP 5</div>
+      <div style="font-size:.65rem;color:#fff;margin-top:.2rem;">Threshold & Alert</div>
+      <div style="font-size:.6rem;color:var(--dim);">LED / Alarm</div>
+    </div>
+  </div>
+
+  <!-- ── CALC CARDS ── -->
+  <div class="calc-grid">
+
+    <!-- ① Impact Force -->
+    <div class="calc-card reveal" style="border-color:rgba(245,166,35,.25);">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;">
+        <div style="width:28px;height:28px;background:rgba(245,166,35,.15);border:1px solid rgba(245,166,35,.4);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">💥</div>
+        <h3 style="color:var(--accent2);margin:0;">Impact Force (F)</h3>
+      </div>
+      <div style="background:#0d1a08;border-left:3px solid var(--accent2);padding:.5rem .8rem;border-radius:0 6px 6px 0;margin-bottom:.8rem;">
+        <div style="font-size:.6rem;color:var(--accent2);letter-spacing:.1em;margin-bottom:.2rem;">USED IN: Car Knock + Glass Break simulations</div>
+        <div style="font-size:.65rem;color:var(--dim);line-height:1.6;">This is the first number fed into the piezo sensor. A car bumper collision or a stone hitting glass both apply a sudden force F. The sensor converts this directly into charge.</div>
+      </div>
+      <div class="formula-box">F = ½ × m × v² / d &nbsp;&nbsp;(impulse approximation)</div>
+      <div class="input-row">
+        <label>Mass m</label>
+        <input type="number" id="f_mass" value="1200" min="1"> <span style="font-size:.65rem;color:var(--dim)">kg</span>
+      </div>
+      <div class="input-row">
+        <label>Velocity v</label>
+        <input type="number" id="f_vel" value="2" min="0.01" step="0.1"> <span style="font-size:.65rem;color:var(--dim)">m/s</span>
+      </div>
+      <div class="input-row">
+        <label>Stop distance d</label>
+        <input type="number" id="f_dist" value="0.05" min="0.001" step="0.01"> <span style="font-size:.65rem;color:var(--dim)">m</span>
+      </div>
+      <button class="btn btn-primary" onclick="calcForce()" style="width:100%;margin-top:.5rem;background:var(--accent2);color:#000;">Calculate</button>
+      <div class="calc-result" id="res_force" style="border-color:var(--accent2);">F = <strong>—</strong></div>
+    </div>
+
+    <!-- ② Charge Output -->
+    <div class="calc-card reveal" style="border-color:rgba(0,245,212,.25);">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;">
+        <div style="width:28px;height:28px;background:rgba(0,245,212,.1);border:1px solid rgba(0,245,212,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">⚡</div>
+        <h3 style="color:var(--accent);margin:0;">Charge Output (Q)</h3>
+      </div>
+      <div style="background:#081a14;border-left:3px solid var(--accent);padding:.5rem .8rem;border-radius:0 6px 6px 0;margin-bottom:.8rem;">
+        <div style="font-size:.6rem;color:var(--accent);letter-spacing:.1em;margin-bottom:.2rem;">USED IN: All three simulators · oscilloscope readout</div>
+        <div style="font-size:.65rem;color:var(--dim);line-height:1.6;">The PZT-5H sensor (d₃₃ = 593 pC/N) generates charge the instant force is applied. This is the raw signal before amplification. Every pC reading in the lab comes from this formula.</div>
+      </div>
+      <div class="formula-box">Q = d₃₃ × F &nbsp;&nbsp;(pico-Coulombs)</div>
+      <div class="input-row">
+        <label>d₃₃ coefficient</label>
+        <input type="number" id="c_d33" value="593" min="1"> <span style="font-size:.65rem;color:var(--dim)">pC/N</span>
+      </div>
+      <div class="input-row">
+        <label>Applied Force F</label>
+        <input type="number" id="c_force" value="2880" min="0.01" step="1"> <span style="font-size:.65rem;color:var(--dim)">N</span>
+      </div>
+      <div style="font-size:.6rem;color:var(--dim);margin-top:.2rem;">💡 Try F from the calculator above ↑</div>
+      <button class="btn btn-primary" onclick="calcCharge()" style="width:100%;margin-top:.5rem;">Calculate</button>
+      <div class="calc-result" id="res_charge">Q = <strong>—</strong></div>
+    </div>
+
+    <!-- ③ Voltage Output -->
+    <div class="calc-card reveal" style="border-color:rgba(224,64,251,.25);">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;">
+        <div style="width:28px;height:28px;background:rgba(224,64,251,.1);border:1px solid rgba(224,64,251,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">🔋</div>
+        <h3 style="color:var(--accent3);margin:0;">Output Voltage (V)</h3>
+      </div>
+      <div style="background:#140a18;border-left:3px solid var(--accent3);padding:.5rem .8rem;border-radius:0 6px 6px 0;margin-bottom:.8rem;">
+        <div style="font-size:.6rem;color:var(--accent3);letter-spacing:.1em;margin-bottom:.2rem;">USED IN: Op-Amp stage · Arduino ADC threshold</div>
+        <div style="font-size:.65rem;color:var(--dim);line-height:1.6;">The 100nF capacitor in the charge amplifier converts Q into a readable voltage. The Arduino's ADC needs at least ~50mV to register. If V is too low, we increase amplifier gain.</div>
+      </div>
+      <div class="formula-box">V = Q / C &nbsp;&nbsp;(charge ÷ capacitance)</div>
+      <div class="input-row">
+        <label>Charge Q</label>
+        <input type="number" id="c_q" value="1709490" min="1"> <span style="font-size:.65rem;color:var(--dim)">pC</span>
+      </div>
+      <div class="input-row">
+        <label>Capacitance C</label>
+        <input type="number" id="c_cap" value="100" min="1"> <span style="font-size:.65rem;color:var(--dim)">nF</span>
+      </div>
+      <div style="font-size:.6rem;color:var(--dim);margin-top:.2rem;">💡 Try Q from the Charge calculator above ↑</div>
+      <button class="btn btn-primary" onclick="calcVoltage()" style="width:100%;margin-top:.5rem;background:var(--accent3);">Calculate</button>
+      <div class="calc-result" id="res_voltage" style="border-color:var(--accent3);">V = <strong>—</strong></div>
+    </div>
+
+    <!-- ④ Resonant Frequency -->
+    <div class="calc-card reveal" style="border-color:rgba(0,200,255,.2);">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;">
+        <div style="width:28px;height:28px;background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">〰</div>
+        <h3 style="color:#00c8ff;margin:0;">Resonant Frequency (f)</h3>
+      </div>
+      <div style="background:#06141a;border-left:3px solid #00c8ff;padding:.5rem .8rem;border-radius:0 6px 6px 0;margin-bottom:.8rem;">
+        <div style="font-size:.6rem;color:#00c8ff;letter-spacing:.1em;margin-bottom:.2rem;">USED IN: FFT analyser · harmonic detection band-pass filter</div>
+        <div style="font-size:.65rem;color:var(--dim);line-height:1.6;">The PZT disc has a natural resonant frequency based on its thickness. The Arduino FFT looks for peaks near this frequency. A glass break produces ~3–10 kHz; a car knock produces ~200–1000 Hz.</div>
+      </div>
+      <div class="formula-box">f = v / (2t) &nbsp;&nbsp;(thickness mode resonance)</div>
+      <div class="input-row">
+        <label>Wave speed v</label>
+        <input type="number" id="c_v" value="3000" min="1"> <span style="font-size:.65rem;color:var(--dim)">m/s (PZT-5H ≈ 3000)</span>
+      </div>
+      <div class="input-row">
+        <label>Disc thickness t</label>
+        <input type="number" id="c_t" value="0.5" min="0.01" step="0.01"> <span style="font-size:.65rem;color:var(--dim)">mm</span>
+      </div>
+      <button class="btn btn-primary" onclick="calcFreq()" style="width:100%;margin-top:.5rem;background:#00c8ff;color:#000;">Calculate</button>
+      <div class="calc-result" id="res_freq" style="border-color:#00c8ff;">f = <strong>—</strong></div>
+    </div>
+
+    <!-- ⑤ SNR -->
+    <div class="calc-card reveal" style="border-color:rgba(46,204,113,.2);">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;">
+        <div style="width:28px;height:28px;background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">📶</div>
+        <h3 style="color:#2ecc71;margin:0;">Signal-to-Noise Ratio</h3>
+      </div>
+      <div style="background:#061408;border-left:3px solid #2ecc71;padding:.5rem .8rem;border-radius:0 6px 6px 0;margin-bottom:.8rem;">
+        <div style="font-size:.6rem;color:#2ecc71;letter-spacing:.1em;margin-bottom:.2rem;">USED IN: Op-Amp buffer design · false alarm prevention</div>
+        <div style="font-size:.65rem;color:var(--dim);line-height:1.6;">The HDP system needs SNR &gt; 20 dB to avoid false alarms from road vibration. The unity-gain buffer stage we designed solves this — it preserves signal and kills noise at the input stage.</div>
+      </div>
+      <div class="formula-box">SNR (dB) = 20 × log₁₀ (V_signal / V_noise)</div>
+      <div class="input-row">
+        <label>Signal voltage V_s</label>
+        <input type="number" id="snr_s" value="100" min="0.001" step="0.1"> <span style="font-size:.65rem;color:var(--dim)">mV</span>
+      </div>
+      <div class="input-row">
+        <label>Noise voltage V_n</label>
+        <input type="number" id="snr_n" value="5" min="0.001" step="0.1"> <span style="font-size:.65rem;color:var(--dim)">mV</span>
+      </div>
+      <button class="btn btn-primary" onclick="calcSNR()" style="width:100%;margin-top:.5rem;background:#2ecc71;color:#000;">Calculate</button>
+      <div class="calc-result" id="res_snr" style="border-color:#2ecc71;">SNR = <strong>—</strong></div>
+    </div>
+
+    <!-- ⑥ Amplifier Gain -->
+    <div class="calc-card reveal" style="border-color:rgba(241,196,15,.2);">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;">
+        <div style="width:28px;height:28px;background:rgba(241,196,15,.1);border:1px solid rgba(241,196,15,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">🔊</div>
+        <h3 style="color:#f1c40f;margin:0;">Op-Amp Gain (Av)</h3>
+      </div>
+      <div style="background:#141200;border-left:3px solid #f1c40f;padding:.5rem .8rem;border-radius:0 6px 6px 0;margin-bottom:.8rem;">
+        <div style="font-size:.6rem;color:#f1c40f;letter-spacing:.1em;margin-bottom:.2rem;">USED IN: Pre-amplifier stage of HDP circuit</div>
+        <div style="font-size:.65rem;color:var(--dim);line-height:1.6;">The inverting op-amp stage boosts the tiny piezo signal to a level the Arduino ADC can read (0–5V range). We set Rf and Rin to control gain. The circuit in the simulations uses exactly this formula.</div>
+      </div>
+      <div class="formula-box">Av = − Rf / Rin &nbsp;&nbsp;(inverting amplifier)</div>
+      <div class="input-row">
+        <label>Feedback Rf</label>
+        <input type="number" id="g_rf" value="100" min="1"> <span style="font-size:.65rem;color:var(--dim)">kΩ</span>
+      </div>
+      <div class="input-row">
+        <label>Input Rin</label>
+        <input type="number" id="g_rin" value="10" min="1"> <span style="font-size:.65rem;color:var(--dim)">kΩ</span>
+      </div>
+      <div class="input-row">
+        <label>Input signal Vin</label>
+        <input type="number" id="g_vin" value="15" min="0.001" step="0.1"> <span style="font-size:.65rem;color:var(--dim)">mV</span>
+      </div>
+      <button class="btn btn-primary" onclick="calcGain()" style="width:100%;margin-top:.5rem;background:#f1c40f;color:#000;">Calculate</button>
+      <div class="calc-result" id="res_gain" style="border-color:#f1c40f;">Av = <strong>—</strong></div>
+    </div>
+
+    <!-- ⑦ Energy Harvested -->
+    <div class="calc-card reveal" style="border-color:rgba(0,245,212,.15);">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;">
+        <div style="width:28px;height:28px;background:rgba(0,245,212,.08);border:1px solid rgba(0,245,212,.25);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">🌱</div>
+        <h3 style="color:var(--accent);margin:0;">Energy Harvested (E)</h3>
+      </div>
+      <div style="background:#081410;border-left:3px solid var(--accent);padding:.5rem .8rem;border-radius:0 6px 6px 0;margin-bottom:.8rem;">
+        <div style="font-size:.6rem;color:var(--accent);letter-spacing:.1em;margin-bottom:.2rem;">USED IN: Self-powered sensor concept · renewable potential</div>
+        <div style="font-size:.65rem;color:var(--dim);line-height:1.6;">In high-vibration environments (engines, bridges), repeated impacts charge a capacitor. This energy can power the Arduino or an alert LED without an external battery — the sensor powers itself.</div>
+      </div>
+      <div class="formula-box">E = ½ × C × V²</div>
+      <div class="input-row">
+        <label>Capacitance C</label>
+        <input type="number" id="e_cap" value="100" min="1"> <span style="font-size:.65rem;color:var(--dim)">nF</span>
+      </div>
+      <div class="input-row">
+        <label>Charged voltage V</label>
+        <input type="number" id="e_v" value="17" min="0.01" step="0.1"> <span style="font-size:.65rem;color:var(--dim)">V</span>
+      </div>
+      <div style="font-size:.6rem;color:var(--dim);margin-top:.2rem;">💡 Try V from the Voltage calculator above ↑</div>
+      <button class="btn btn-primary" onclick="calcEnergy()" style="width:100%;margin-top:.5rem;">Calculate</button>
+      <div class="calc-result" id="res_energy">E = <strong>—</strong></div>
+    </div>
+
+    <!-- ⑧ Detection Threshold -->
+    <div class="calc-card reveal" style="border-color:rgba(231,76,60,.2);">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;">
+        <div style="width:28px;height:28px;background:rgba(231,76,60,.1);border:1px solid rgba(231,76,60,.3);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.9rem;">🚨</div>
+        <h3 style="color:#e74c3c;margin:0;">Detection Threshold (V_th)</h3>
+      </div>
+      <div style="background:#140606;border-left:3px solid #e74c3c;padding:.5rem .8rem;border-radius:0 6px 6px 0;margin-bottom:.8rem;">
+        <div style="font-size:.6rem;color:#e74c3c;letter-spacing:.1em;margin-bottom:.2rem;">USED IN: Arduino comparator · alarm trigger logic</div>
+        <div style="font-size:.65rem;color:var(--dim);line-height:1.6;">The Arduino checks if the amplified voltage exceeds V_th. If yes → LED turns ON, alarm triggers. Setting V_th too low causes false alarms; too high misses real events. This calculator helps pick the right threshold.</div>
+      </div>
+      <div class="formula-box">V_th = (d₃₃ × F_min × Av) / C</div>
+      <div class="input-row">
+        <label>Min trigger force</label>
+        <input type="number" id="th_f" value="150" min="1"> <span style="font-size:.65rem;color:var(--dim)">N</span>
+      </div>
+      <div class="input-row">
+        <label>d₃₃ coefficient</label>
+        <input type="number" id="th_d" value="593" min="1"> <span style="font-size:.65rem;color:var(--dim)">pC/N</span>
+      </div>
+      <div class="input-row">
+        <label>Amplifier gain Av</label>
+        <input type="number" id="th_av" value="10" min="1"> <span style="font-size:.65rem;color:var(--dim)">×</span>
+      </div>
+      <div class="input-row">
+        <label>Capacitance C</label>
+        <input type="number" id="th_c" value="100" min="1"> <span style="font-size:.65rem;color:var(--dim)">nF</span>
+      </div>
+      <button class="btn btn-primary" onclick="calcThreshold()" style="width:100%;margin-top:.5rem;background:#e74c3c;">Calculate</button>
+      <div class="calc-result" id="res_threshold" style="border-color:#e74c3c;">V_th = <strong>—</strong></div>
+    </div>
+
+  </div></div>
+</div>
+
+<script src="calculators.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

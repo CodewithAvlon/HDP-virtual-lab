@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Materials — HDP Virtual Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+html,body{height:100%;overflow:hidden;margin:0;padding:0;}
+body{display:flex;background:var(--bg);color:var(--text);font-family:'Space Mono',monospace;}
+.page-area{flex:1;overflow-y:auto;overflow-x:hidden;min-width:0;height:100vh;}
+
+</style></head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <div class="sb-toggle" id="sb-btn" onclick="toggleSidebar()">❮</div>
+  <div class="sb-logo"><div class="sb-logo-icon">HDP</div><div class="sb-logo-text sb-hide">Virtual<br>Physics Lab</div></div>
+  <div class="sb-section-title sb-hide">Main Sections</div>
+  <div class="sb-nav-item active" onclick="goTo('home')" data-page="home" id="nav-home"><span class="icon">🏠</span><span class="sb-hide">Home</span></div>
+  <div class="sb-nav-item" onclick="goTo('theory')" data-page="theory" id="nav-theory"><span class="icon">📖</span><span class="sb-hide">Theory</span></div>
+  <div class="sb-nav-item" onclick="goTo('system')" data-page="system" id="nav-system"><span class="icon">⚙️</span><span class="sb-hide">HDP System</span></div>
+  <div class="sb-nav-item" onclick="goTo('oscilloscope')" data-page="oscilloscope" id="nav-oscilloscope"><span class="icon">📡</span><span class="sb-hide">Oscilloscope</span></div>
+  <div class="sb-nav-item" onclick="goTo('calculators')" data-page="calculators" id="nav-calculators"><span class="icon">🧮</span><span class="sb-hide">Calculators</span></div>
+  <div class="sb-nav-item" onclick="goTo('materials')" data-page="materials" id="nav-materials"><span class="icon">🔬</span><span class="sb-hide">Materials</span></div>
+  <div class="sb-nav-item" onclick="goTo('applications')" data-page="applications" id="nav-applications"><span class="icon">🌐</span><span class="sb-hide">Applications</span></div>
+  <div class="sb-divider"></div>
+  <div class="sb-section-title sb-hide">🧪 Experiments</div>
+  <div class="sb-exp-card" id="nav-exp-glass" onclick="goTo('exp-glass')" data-page="exp-glass">
+    <div class="sb-exp-icon">🪟</div>
+    <div class="sb-hide"><div class="sb-exp-title">Exp 1: Glass Break</div><div class="sb-exp-sub">Anti-theft vibration<br>detection via PZT</div><span class="sb-exp-badge">LAB</span></div>
+  </div>
+  <div class="sb-exp-card" id="nav-exp-car" onclick="goTo('exp-car')" data-page="exp-car">
+    <div class="sb-exp-icon">🚗</div>
+    <div class="sb-hide"><div class="sb-exp-title">Exp 2: Car Knock</div><div class="sb-exp-sub">Reverse collision<br>bumper sensor</div><span class="sb-exp-badge">LAB</span></div>
+  </div>
+  <div class="sb-divider"></div>
+  <div style="padding:.7rem .9rem;line-height:1.7;flex-shrink:0;" class="sb-hide"><div style="font-size:.55rem;color:var(--dim);">Team HDP · 2025<br>Harmonic Detection<br>Piezo System</div></div>
+</aside>
+<div class="page-area">
+  <div class="page-header">
+    <span class="ph-crumb">HDP Lab / <span>Materials</span></span>
+    <span class="ph-title">🔬 Materials</span>
+  </div>
+<div class="page-body"><div class="section-tag">Reference</div>
+  <h2 class="section-title">Piezoelectric Materials Comparison</h2>
+  <div class="divider"></div>
+  <table class="reveal">
+    <thead>
+      <tr>
+        <th>Material</th>
+        <th>Type</th>
+        <th>d₃₃ (pC/N)</th>
+        <th>Curie Temp.</th>
+        <th>Best Use</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Quartz (SiO₂)</td>
+        <td>Natural Crystal</td>
+        <td class="highlight">2.3</td>
+        <td>573 °C</td>
+        <td>Precision frequency references, watches</td>
+        <td style="color:#2ecc71">✔ Used</td>
+      </tr>
+      <tr>
+        <td>PZT-4 (Hard)</td>
+        <td>Ceramic</td>
+        <td class="highlight">289</td>
+        <td>328 °C</td>
+        <td>High-power ultrasonic transducers</td>
+        <td style="color:#95a5a6">◎ Available</td>
+      </tr>
+      <tr>
+        <td><strong style="color:#fff">PZT-5H ★</strong></td>
+        <td>Ceramic</td>
+        <td class="highlight">593</td>
+        <td>193 °C</td>
+        <td><strong>HDP System — highest charge sensitivity</strong></td>
+        <td style="color:var(--accent)">★ HDP Choice</td>
+      </tr>
+      <tr>
+        <td>BaTiO₃</td>
+        <td>Ceramic</td>
+        <td class="highlight">191</td>
+        <td>120 °C</td>
+        <td>Sonar, general sensing</td>
+        <td style="color:#95a5a6">◎ Available</td>
+      </tr>
+      <tr>
+        <td>PVDF</td>
+        <td>Polymer Film</td>
+        <td class="highlight">−33</td>
+        <td>80 °C</td>
+        <td>Flexible sensors, wearables, impact detection</td>
+        <td style="color:#e67e22">▲ Flexible</td>
+      </tr>
+      <tr>
+        <td>Tourmaline</td>
+        <td>Natural Crystal</td>
+        <td class="highlight">1.8</td>
+        <td>700 °C</td>
+        <td>High-temperature / high-pressure sensing</td>
+        <td style="color:#95a5a6">◎ Available</td>
+      </tr>
+    </tbody>
+  </table></div>
+</div>
+
+<script src="nav.js"></script>
+</body>
+</html>

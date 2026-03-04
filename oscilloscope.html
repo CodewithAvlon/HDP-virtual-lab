@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Oscilloscope — HDP Virtual Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+html,body{height:100%;overflow:hidden;margin:0;padding:0;}
+body{display:flex;background:var(--bg);color:var(--text);font-family:'Space Mono',monospace;}
+.page-area{flex:1;overflow-y:auto;overflow-x:hidden;min-width:0;height:100vh;}
+
+</style></head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <div class="sb-toggle" id="sb-btn" onclick="toggleSidebar()">❮</div>
+  <div class="sb-logo"><div class="sb-logo-icon">HDP</div><div class="sb-logo-text sb-hide">Virtual<br>Physics Lab</div></div>
+  <div class="sb-section-title sb-hide">Main Sections</div>
+  <div class="sb-nav-item active" onclick="goTo('home')" data-page="home" id="nav-home"><span class="icon">🏠</span><span class="sb-hide">Home</span></div>
+  <div class="sb-nav-item" onclick="goTo('theory')" data-page="theory" id="nav-theory"><span class="icon">📖</span><span class="sb-hide">Theory</span></div>
+  <div class="sb-nav-item" onclick="goTo('system')" data-page="system" id="nav-system"><span class="icon">⚙️</span><span class="sb-hide">HDP System</span></div>
+  <div class="sb-nav-item" onclick="goTo('oscilloscope')" data-page="oscilloscope" id="nav-oscilloscope"><span class="icon">📡</span><span class="sb-hide">Oscilloscope</span></div>
+  <div class="sb-nav-item" onclick="goTo('calculators')" data-page="calculators" id="nav-calculators"><span class="icon">🧮</span><span class="sb-hide">Calculators</span></div>
+  <div class="sb-nav-item" onclick="goTo('materials')" data-page="materials" id="nav-materials"><span class="icon">🔬</span><span class="sb-hide">Materials</span></div>
+  <div class="sb-nav-item" onclick="goTo('applications')" data-page="applications" id="nav-applications"><span class="icon">🌐</span><span class="sb-hide">Applications</span></div>
+  <div class="sb-divider"></div>
+  <div class="sb-section-title sb-hide">🧪 Experiments</div>
+  <div class="sb-exp-card" id="nav-exp-glass" onclick="goTo('exp-glass')" data-page="exp-glass">
+    <div class="sb-exp-icon">🪟</div>
+    <div class="sb-hide"><div class="sb-exp-title">Exp 1: Glass Break</div><div class="sb-exp-sub">Anti-theft vibration<br>detection via PZT</div><span class="sb-exp-badge">LAB</span></div>
+  </div>
+  <div class="sb-exp-card" id="nav-exp-car" onclick="goTo('exp-car')" data-page="exp-car">
+    <div class="sb-exp-icon">🚗</div>
+    <div class="sb-hide"><div class="sb-exp-title">Exp 2: Car Knock</div><div class="sb-exp-sub">Reverse collision<br>bumper sensor</div><span class="sb-exp-badge">LAB</span></div>
+  </div>
+  <div class="sb-divider"></div>
+  <div style="padding:.7rem .9rem;line-height:1.7;flex-shrink:0;" class="sb-hide"><div style="font-size:.55rem;color:var(--dim);">Team HDP · 2025<br>Harmonic Detection<br>Piezo System</div></div>
+</aside>
+<div class="page-area">
+  <div class="page-header">
+    <span class="ph-crumb">HDP Lab / <span>Oscilloscope</span></span>
+    <span class="ph-title">📡 Oscilloscope</span>
+  </div>
+<div class="page-body-full"><div class="section-tag">Interactive Lab</div>
+  <h2 class="section-title">Virtual Oscilloscope &amp; FFT Analyser</h2>
+  <div class="divider"></div>
+  <p style="font-size:.78rem;color:var(--dim);margin-bottom:.3rem;">
+    <span class="status-dot"></span> &nbsp;Live signal simulation — adjust parameters to see real-time waveform changes
+  </p>
+  <div class="lab-container">
+    <!-- Oscilloscope -->
+    <div class="scope-panel">
+      <div class="scope-label">CH1 – PIEZO OUTPUT &nbsp;|&nbsp; 1V/div &nbsp;|&nbsp; TIME/div AUTO</div>
+      <canvas id="oscCanvas" width="500" height="200"></canvas>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls-panel">
+      <div class="ctrl-group">
+        <label>Vibration Frequency <span id="freqLabel">100 Hz</span></label>
+        <input type="range" id="freqSlider" min="10" max="500" value="100">
+      </div>
+      <div class="ctrl-group">
+        <label>Force Applied <span id="forceLabel">5.0 N</span></label>
+        <input type="range" id="forceSlider" min="1" max="50" value="5" step="0.5">
+      </div>
+      <div class="ctrl-group">
+        <label>Piezo Coefficient (d₃₃) <span id="dLabel">300 pC/N</span></label>
+        <input type="range" id="dSlider" min="50" max="700" value="300" step="10">
+      </div>
+      <div class="ctrl-group">
+        <label>Noise Level <span id="noiseLabel">5%</span></label>
+        <input type="range" id="noiseSlider" min="0" max="50" value="5">
+      </div>
+      <div class="readout-grid">
+        <div class="readout">
+          <div class="val" id="chargeOut">1500</div>
+          <div class="unit">pC &nbsp;Charge Output</div>
+        </div>
+        <div class="readout">
+          <div class="val" id="voltOut">0.015</div>
+          <div class="unit">mV &nbsp;Open-Circuit V</div>
+        </div>
+        <div class="readout">
+          <div class="val" id="freqOut">100</div>
+          <div class="unit">Hz &nbsp;Fundamental</div>
+        </div>
+        <div class="readout">
+          <div class="val" id="harmOut">200</div>
+          <div class="unit">Hz &nbsp;2nd Harmonic</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FFT -->
+    <div class="fft-panel">
+      <div style="font-size:.6rem;color:rgba(0,150,255,.7);letter-spacing:.1em;margin-bottom:.5rem;">FFT FREQUENCY SPECTRUM</div>
+      <canvas id="fftCanvas" width="1000" height="100"></canvas>
+    </div></div>
+</div>
+
+<script src="oscilloscope.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>

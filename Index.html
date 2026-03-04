@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>HDP Virtual Lab — HDP Virtual Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+html,body{height:100%;overflow:hidden;margin:0;padding:0;}
+body{display:flex;background:var(--bg);color:var(--text);font-family:'Space Mono',monospace;}
+.page-area{flex:1;overflow-y:auto;overflow-x:hidden;min-width:0;height:100vh;}
+#hero{min-height:100vh;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+</style>
+</head>
+<body>
+<aside class="sidebar" id="sidebar">
+  <div class="sb-toggle" id="sb-btn" onclick="toggleSidebar()">❮</div>
+  <div class="sb-logo"><div class="sb-logo-icon">HDP</div><div class="sb-logo-text sb-hide">Virtual<br>Physics Lab</div></div>
+  <div class="sb-section-title sb-hide">Main Sections</div>
+  <div class="sb-nav-item active" onclick="goTo('home')" data-page="home" id="nav-home"><span class="icon">🏠</span><span class="sb-hide">Home</span></div>
+  <div class="sb-nav-item" onclick="goTo('theory')" data-page="theory" id="nav-theory"><span class="icon">📖</span><span class="sb-hide">Theory</span></div>
+  <div class="sb-nav-item" onclick="goTo('system')" data-page="system" id="nav-system"><span class="icon">⚙️</span><span class="sb-hide">HDP System</span></div>
+  <div class="sb-nav-item" onclick="goTo('oscilloscope')" data-page="oscilloscope" id="nav-oscilloscope"><span class="icon">📡</span><span class="sb-hide">Oscilloscope</span></div>
+  <div class="sb-nav-item" onclick="goTo('calculators')" data-page="calculators" id="nav-calculators"><span class="icon">🧮</span><span class="sb-hide">Calculators</span></div>
+  <div class="sb-nav-item" onclick="goTo('materials')" data-page="materials" id="nav-materials"><span class="icon">🔬</span><span class="sb-hide">Materials</span></div>
+  <div class="sb-nav-item" onclick="goTo('applications')" data-page="applications" id="nav-applications"><span class="icon">🌐</span><span class="sb-hide">Applications</span></div>
+  <div class="sb-divider"></div>
+  <div class="sb-section-title sb-hide">🧪 Experiments</div>
+  <div class="sb-exp-card" id="nav-exp-glass" onclick="goTo('exp-glass')" data-page="exp-glass">
+    <div class="sb-exp-icon">🪟</div>
+    <div class="sb-hide"><div class="sb-exp-title">Exp 1: Glass Break</div><div class="sb-exp-sub">Anti-theft vibration<br>detection via PZT</div><span class="sb-exp-badge">LAB</span></div>
+  </div>
+  <div class="sb-exp-card" id="nav-exp-car" onclick="goTo('exp-car')" data-page="exp-car">
+    <div class="sb-exp-icon">🚗</div>
+    <div class="sb-hide"><div class="sb-exp-title">Exp 2: Car Knock</div><div class="sb-exp-sub">Reverse collision<br>bumper sensor</div><span class="sb-exp-badge">LAB</span></div>
+  </div>
+  <div class="sb-divider"></div>
+  <div style="padding:.7rem .9rem;line-height:1.7;flex-shrink:0;" class="sb-hide"><div style="font-size:.55rem;color:var(--dim);">Team HDP · 2025<br>Harmonic Detection<br>Piezo System</div></div>
+</aside>
+<div class="page-area">
+<section id="hero" style="max-width:100%;padding:0;position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;overflow:hidden;">
+      <canvas id="hero-canvas" style="position:absolute;inset:0;z-index:0;"></canvas>
+      <div class="hero-content" style="position:relative;z-index:1;padding:2rem;">
+        <div class="badge">Team HDP · Physics Virtual Lab</div>
+        <h1 class="logo">PIEZO<span>ELECTRIC</span><br>VIRTUAL LAB</h1>
+        <p class="hero-sub">HDP – Harmonic Detection Piezo System<br>Interactive exploration of sensor technology, vibration analysis &amp; signal processing</p>
+        <div class="hero-btns">
+          <button class="btn btn-primary" onclick="goTo('theory')">Explore Theory →</button>
+          <button class="btn btn-outline" onclick="goTo('exp-glass')">Run Experiments</button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.75rem;margin-top:2.5rem;max-width:680px;text-align:left;">
+<div onclick="goTo('theory')" style="background:rgba(255,255,255,.05);border:1px solid rgba(0,245,212,.15);border-radius:10px;padding:.9rem;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,245,212,.5)'" onmouseout="this.style.borderColor='rgba(0,245,212,.15)'"><div style="font-size:1.3rem;">📖</div><div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent);margin:.35rem 0 .15rem;">THEORY</div><div style="font-size:.58rem;color:var(--dim);">Piezoelectricity fundamentals</div></div>
+<div onclick="goTo('system')" style="background:rgba(255,255,255,.05);border:1px solid rgba(0,245,212,.15);border-radius:10px;padding:.9rem;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,245,212,.5)'" onmouseout="this.style.borderColor='rgba(0,245,212,.15)'"><div style="font-size:1.3rem;">⚙️</div><div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent);margin:.35rem 0 .15rem;">HDP SYSTEM</div><div style="font-size:.58rem;color:var(--dim);">Signal chain & circuit</div></div>
+<div onclick="goTo('oscilloscope')" style="background:rgba(255,255,255,.05);border:1px solid rgba(0,245,212,.15);border-radius:10px;padding:.9rem;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,245,212,.5)'" onmouseout="this.style.borderColor='rgba(0,245,212,.15)'"><div style="font-size:1.3rem;">📡</div><div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent);margin:.35rem 0 .15rem;">OSCILLOSCOPE</div><div style="font-size:.58rem;color:var(--dim);">Live waveform & FFT</div></div>
+<div onclick="goTo('calculators')" style="background:rgba(255,255,255,.05);border:1px solid rgba(0,245,212,.15);border-radius:10px;padding:.9rem;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(0,245,212,.5)'" onmouseout="this.style.borderColor='rgba(0,245,212,.15)'"><div style="font-size:1.3rem;">🧮</div><div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent);margin:.35rem 0 .15rem;">CALCULATORS</div><div style="font-size:.58rem;color:var(--dim);">8 physics calculators</div></div>
+<div onclick="goTo('exp-glass')" style="background:rgba(255,255,255,.05);border:1px solid rgba(224,64,251,.2);border-radius:10px;padding:.9rem;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(224,64,251,.6)'" onmouseout="this.style.borderColor='rgba(224,64,251,.2)'"><div style="font-size:1.3rem;">🪟</div><div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent3);margin:.35rem 0 .15rem;">EXP 1</div><div style="font-size:.58rem;color:var(--dim);">Glass break detection</div></div>
+<div onclick="goTo('exp-car')" style="background:rgba(255,255,255,.05);border:1px solid rgba(245,166,35,.2);border-radius:10px;padding:.9rem;cursor:pointer;transition:border-color .2s;" onmouseover="this.style.borderColor='rgba(245,166,35,.6)'" onmouseout="this.style.borderColor='rgba(245,166,35,.2)'"><div style="font-size:1.3rem;">🚗</div><div style="font-family:Orbitron,sans-serif;font-size:.6rem;color:var(--accent2);margin:.35rem 0 .15rem;">EXP 2</div><div style="font-size:.58rem;color:var(--dim);">Car reverse knock sensor</div></div>
+        </div>
+      </div>
+    </section>
+</div>
+
+<script src="hero.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
