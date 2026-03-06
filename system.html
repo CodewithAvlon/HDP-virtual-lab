@@ -618,12 +618,15 @@ body{display:flex;background:var(--bg);color:var(--text);font-family:'Space Mono
   </div>
   <div class="sb-divider"></div>
   <div style="padding:.7rem .9rem;line-height:1.7;flex-shrink:0;" class="sb-hide">
-    <div style="font-size:.55rem;color:var(--dim);">Team HDP · 2025<br>Harmonic Detection<br>Piezo System</div>
+    <div style="font-size:.55rem;color:var(--dim);">Team HDP · 2025</div>
   </div>
 </aside>
 <div class="page-area">
-<div class="page-header"><span class="ph-crumb">HDP Lab / <span>System</span></span><span class="ph-title">⚙️ HDP System</span></div>
-<div class="page-body"><div class="section-tag">Signal Chain</div>
+  <div class="page-header">
+    <span class="ph-crumb">HDP Lab / <span>System</span></span>
+    <span class="ph-title">⚙️ HDP System</span>
+  </div>
+  <div class="page-body"><div class="section-tag">Signal Chain</div>
   <h2 class="section-title">HDP System: Vibration → Signal</h2>
   <div class="divider"></div>
   <p style="font-size:.78rem;color:var(--dim);margin-bottom:1rem;">The Harmonic Detection Piezo System captures and analyses mechanical harmonics through a precise 5-stage pipeline.</p>
@@ -654,88 +657,156 @@ body{display:flex;background:var(--bg);color:var(--text);font-family:'Space Mono
       <p>Identified harmonic frequencies displayed in real-time or logged for structural health analysis.</p>
     </div>
   </div></div>
-</div>
-
-
-
-<style>
-.hdp-leg{display:flex;align-items:center;gap:.7rem;padding:.45rem .6rem;border-radius:8px;border:1px solid rgba(255,255,255,.04);cursor:pointer;transition:all .2s;}
-.hdp-leg:hover,.hdp-leg.active{background:rgba(0,245,212,.05);border-color:rgba(0,245,212,.2);}
-.hdp-sw{width:13px;height:13px;border-radius:3px;flex-shrink:0;}
-.hdp-ln{font-size:.63rem;color:#e0e0e0;}
-.hdp-ls{font-size:.54rem;color:var(--dim);}
-</style>
-
-
-<div style="margin-top:3rem;">
+  </div>
+  <div class="page"
+  <div style="margin-top:3rem;">
   <div class="section-tag">3D Model</div>
   <h2 class="section-title">HDP System Assembly</h2>
   <div class="divider"></div>
   <p style="font-size:.73rem;color:var(--dim);margin-bottom:1.5rem;line-height:1.8;">
-    Interactive 3D model of the HDP sensor unit — Piezo disc on Arduino base with impedance buffer and output. Hover components · Drag to rotate · Scroll to zoom.
+    Interactive 3D model matching the PPT — Arduino cylinder, Piezo disc, Impedance Buffers, signal wires and output board. Hover components · Drag to rotate · Scroll to zoom.
   </p>
   <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(0,245,212,.15);background:#020810;">
     <canvas id="hdp3d" style="width:100%;height:480px;display:block;cursor:grab;"></canvas>
-    <div id="hdp-hint" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
-      background:rgba(0,0,0,.75);border:1px solid rgba(0,245,212,.25);border-radius:20px;
-      padding:.3rem 1rem;font-size:.6rem;color:var(--dim);pointer-events:none;
-      font-family:'Space Mono',monospace;white-space:nowrap;transition:opacity 1.5s;">
-      🖱 Drag to rotate · Scroll to zoom · Hover to inspect
-    </div>
-    <div id="hdp-tooltip" style="display:none;position:absolute;pointer-events:none;
-      background:rgba(5,11,20,.95);border:1px solid rgba(0,245,212,.4);border-radius:10px;
-      padding:.7rem 1rem;max-width:240px;font-family:'Space Mono',monospace;z-index:10;
-      box-shadow:0 8px 32px rgba(0,0,0,.7);">
+    <div id="hdp-hint" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.75);border:1px solid rgba(0,245,212,.25);border-radius:20px;padding:.3rem 1rem;font-size:.6rem;color:var(--dim);pointer-events:none;font-family:'Space Mono',monospace;white-space:nowrap;transition:opacity 1.5s;">🖱 Drag to rotate · Scroll to zoom · Hover to inspect</div>
+    <div id="hdp-tooltip" style="display:none;position:absolute;pointer-events:none;background:rgba(5,11,20,.95);border:1px solid rgba(0,245,212,.4);border-radius:10px;padding:.7rem 1rem;max-width:240px;font-family:'Space Mono',monospace;z-index:10;box-shadow:0 8px 32px rgba(0,0,0,.7);">
       <div id="hdp-tt-name" style="font-family:'Orbitron',sans-serif;font-size:.65rem;color:var(--accent);margin-bottom:.4rem;letter-spacing:.08em;"></div>
       <div id="hdp-tt-desc" style="font-size:.6rem;color:var(--dim);line-height:1.75;"></div>
       <div id="hdp-tt-spec" style="font-size:.55rem;color:var(--accent2);margin-top:.4rem;font-style:italic;"></div>
     </div>
   </div>
-  <!-- Legend row -->
   <div style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;">
-    <div class="hdp-leg" data-comp="arduino"><div class="hdp-sw" style="background:#e8f5e9;border:1px solid #66bb6a;"></div><span class="hdp-ln">Arduino Microcontroller</span></div>
+    <div class="hdp-leg" data-comp="arduino"><div class="hdp-sw" style="background:#c8e6c9;border:1px solid #66bb6a;"></div><span class="hdp-ln">Arduino Microcontroller</span></div>
     <div class="hdp-leg" data-comp="piezo"><div class="hdp-sw" style="background:#1565c0;"></div><span class="hdp-ln">Piezo Disc Sensor</span></div>
     <div class="hdp-leg" data-comp="buffer"><div class="hdp-sw" style="background:#90a4ae;"></div><span class="hdp-ln">Impedance Buffer (Op-Amp)</span></div>
     <div class="hdp-leg" data-comp="wire"><div class="hdp-sw" style="background:#1976d2;"></div><span class="hdp-ln">Signal Wire</span></div>
-    <div class="hdp-leg" data-comp="output"><div class="hdp-sw" style="background:#37474f;"></div><span class="hdp-ln">Output / Display Board</span></div>
-    <div class="hdp-leg" data-comp="arrow"><div class="hdp-sw" style="background:#ffffff;border:1px solid #555;"></div><span class="hdp-ln">Vibration Input</span></div>
+    <div class="hdp-leg" data-comp="output"><div class="hdp-sw" style="background:#37474f;"></div><span class="hdp-ln">Output Board</span></div>
+    <div class="hdp-leg" data-comp="arrow"><div class="hdp-sw" style="background:#fff;border:1px solid #555;"></div><span class="hdp-ln">Vibration Input</span></div>
   </div>
 </div>
-
 <style>
 .hdp-leg{display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .7rem;border-radius:6px;border:1px solid rgba(255,255,255,.06);cursor:pointer;transition:all .2s;}
 .hdp-leg:hover,.hdp-leg.active{background:rgba(0,245,212,.06);border-color:rgba(0,245,212,.25);}
 .hdp-sw{width:12px;height:12px;border-radius:3px;flex-shrink:0;}
 .hdp-ln{font-size:.62rem;color:#ccc;}
 </style>
+  <div style="margin-top:3rem; padding-bottom:3rem;">
+    <div style="margin-top:2rem;">
+<div class="section-tag">3D Assembly</div>
+  <h2 class="section-title">PZT Sensor on Glass — 3D View</h2>
+  <div class="divider"></div>
+  <p style="font-size:.73rem;color:var(--dim);margin-bottom:1.5rem;line-height:1.8;">
+    Hover over each component to learn how it functions. Drag to rotate · Scroll to zoom.
+  </p>
 
+  <div style="display:grid;grid-template-columns:1fr 340px;gap:1.5rem;align-items:start;">
+
+    <!-- THREE.JS CANVAS -->
+    <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(0,245,212,.15);background:#020810;">
+      <canvas id="piezo3d" style="width:100%;height:420px;display:block;cursor:grab;"></canvas>
+      <!-- Floating hint -->
+      <div id="p3d-hint" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+        background:rgba(0,0,0,.7);border:1px solid rgba(0,245,212,.2);border-radius:20px;
+        padding:.3rem 1rem;font-size:.6rem;color:var(--dim);pointer-events:none;
+        font-family:'Space Mono',monospace;letter-spacing:.05em;white-space:nowrap;">
+        🖱 Drag to rotate · Scroll to zoom · Hover components
+      </div>
+      <!-- Tooltip -->
+      <div id="p3d-tooltip" style="display:none;position:absolute;pointer-events:none;
+        background:rgba(5,11,20,.95);border:1px solid rgba(0,245,212,.35);border-radius:10px;
+        padding:.7rem 1rem;max-width:220px;font-family:'Space Mono',monospace;z-index:10;
+        box-shadow:0 8px 30px rgba(0,0,0,.6);">
+        <div id="p3d-tt-name" style="font-family:'Orbitron',sans-serif;font-size:.65rem;
+          color:var(--accent);margin-bottom:.35rem;letter-spacing:.08em;"></div>
+        <div id="p3d-tt-desc" style="font-size:.6rem;color:var(--dim);line-height:1.7;"></div>
+        <div id="p3d-tt-spec" style="font-size:.55rem;color:var(--accent2);margin-top:.4rem;
+          font-style:italic;"></div>
+      </div>
+    </div>
+
+    <!-- COMPONENT LEGEND -->
+    <div style="display:flex;flex-direction:column;gap:.6rem;">
+      <div style="font-family:'Orbitron',sans-serif;font-size:.6rem;color:var(--accent);
+        letter-spacing:.12em;margin-bottom:.4rem;">COMPONENT LEGEND</div>
+
+      <div class="p3d-leg" data-comp="glass">
+        <div class="p3d-swatch" style="background:#4fc3f7;"></div>
+        <div><div class="p3d-leg-name">Window Glass Panel</div>
+          <div class="p3d-leg-sub">Vibration propagation medium</div></div>
+      </div>
+      <div class="p3d-leg" data-comp="epoxy">
+        <div class="p3d-swatch" style="background:#ffd54f;"></div>
+        <div><div class="p3d-leg-name">Epoxy Adhesive Layer</div>
+          <div class="p3d-leg-sub">Mechanical coupling to glass</div></div>
+      </div>
+      <div class="p3d-leg" data-comp="electrode_b">
+        <div class="p3d-swatch" style="background:#bdbdbd;"></div>
+        <div><div class="p3d-leg-name">Bottom Electrode (Ag)</div>
+          <div class="p3d-leg-sub">Ground / charge collector</div></div>
+      </div>
+      <div class="p3d-leg" data-comp="pzt">
+        <div class="p3d-swatch" style="background:#e040fb;"></div>
+        <div><div class="p3d-leg-name">PZT-5H Ceramic Disc</div>
+          <div class="p3d-leg-sub">Active piezo element · d₃₃=593 pC/N</div></div>
+      </div>
+      <div class="p3d-leg" data-comp="electrode_t">
+        <div class="p3d-swatch" style="background:#e0e0e0;"></div>
+        <div><div class="p3d-leg-name">Top Electrode (Ag)</div>
+          <div class="p3d-leg-sub">Signal output electrode</div></div>
+      </div>
+      <div class="p3d-leg" data-comp="wire_red">
+        <div class="p3d-swatch" style="background:#f44336;"></div>
+        <div><div class="p3d-leg-name">Signal Wire (+)</div>
+          <div class="p3d-leg-sub">To Op-Amp input</div></div>
+      </div>
+      <div class="p3d-leg" data-comp="wire_black">
+        <div class="p3d-swatch" style="background:#616161;"></div>
+        <div><div class="p3d-leg-name">Ground Wire (−)</div>
+          <div class="p3d-leg-sub">To circuit ground</div></div>
+      </div>
+
+      <!-- Explode toggle -->
+      <button id="p3d-explode" style="margin-top:.8rem;padding:.5rem 1rem;
+        background:transparent;border:1px solid rgba(0,245,212,.4);border-radius:6px;
+        color:var(--accent);font-family:'Orbitron',sans-serif;font-size:.6rem;
+        cursor:pointer;letter-spacing:.08em;transition:all .2s;"
+        onmouseover="this.style.background='rgba(0,245,212,.1)'"
+        onmouseout="this.style.background='transparent'">
+        ⊞ EXPLODE VIEW
+      </button>
+      <button id="p3d-reset" style="padding:.5rem 1rem;
+        background:transparent;border:1px solid rgba(255,255,255,.15);border-radius:6px;
+        color:var(--dim);font-family:'Orbitron',sans-serif;font-size:.6rem;
+        cursor:pointer;letter-spacing:.08em;transition:all .2s;"
+        onmouseover="this.style.background='rgba(255,255,255,.05)'"
+        onmouseout="this.style.background='transparent'">
+        ↺ RESET VIEW
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+.p3d-leg {
+  display:flex;align-items:center;gap:.7rem;padding:.5rem .7rem;
+  border-radius:8px;border:1px solid rgba(255,255,255,.04);
+  cursor:pointer;transition:all .2s;
+}
+.p3d-leg:hover { background:rgba(0,245,212,.05);border-color:rgba(0,245,212,.2); }
+.p3d-leg.active { background:rgba(0,245,212,.08);border-color:rgba(0,245,212,.35); }
+.p3d-swatch { width:14px;height:14px;border-radius:3px;flex-shrink:0; }
+.p3d-leg-name { font-size:.65rem;color:#e0e0e0;margin-bottom:.1rem; }
+.p3d-leg-sub { font-size:.55rem;color:var(--dim); }
+</style>
+  </div>
+</div>
 <script>
-
-function goTo(n){
-  var p={'home':'index.html','theory':'theory.html','system':'system.html',
-    'oscilloscope':'oscilloscope.html','calculators':'calculators.html',
-    'materials':'materials.html','applications':'applications.html',
-    'exp-glass':'exp-glass.html','exp-car':'exp-car.html'};
-  window.location.href = p[n] || 'index.html';
-}
-function toggleSidebar(){
-  var s=document.getElementById('sidebar'), b=document.getElementById('sb-btn');
-  s.classList.toggle('collapsed');
-  b.textContent = s.classList.contains('collapsed') ? '❯' : '❮';
-}
-function markActive(cur){
-  var p={'home':'index.html','theory':'theory.html','system':'system.html',
-    'oscilloscope':'oscilloscope.html','calculators':'calculators.html',
-    'materials':'materials.html','applications':'applications.html',
-    'exp-glass':'exp-glass.html','exp-car':'exp-car.html'};
-  document.querySelectorAll('[data-page]').forEach(function(el){
-    el.classList.toggle('active', p[el.dataset.page] === cur);
-  });
-}
+function goTo(n){var p={'home':'index.html','theory':'theory.html','system':'system.html','oscilloscope':'oscilloscope.html','calculators':'calculators.html','materials':'materials.html','applications':'applications.html','exp-glass':'exp-glass.html','exp-car':'exp-car.html'};window.location.href=p[n]||'index.html';}
+function toggleSidebar(){var s=document.getElementById('sidebar'),b=document.getElementById('sb-btn');s.classList.toggle('collapsed');b.textContent=s.classList.contains('collapsed')?'❯':'❮';}
+function markActive(cur){var p={'home':'index.html','theory':'theory.html','system':'system.html','oscilloscope':'oscilloscope.html','calculators':'calculators.html','materials':'materials.html','applications':'applications.html','exp-glass':'exp-glass.html','exp-car':'exp-car.html'};document.querySelectorAll('[data-page]').forEach(function(el){el.classList.toggle('active',p[el.dataset.page]===cur);});}
 document.addEventListener('DOMContentLoaded',function(){
   markActive('system.html');
-
-/* ═══════════════════════════════════════
+  /* ═══════════════════════════════════════
    HDP SYSTEM 3D — Three.js r128
    Matches PPT: Arduino cylinder base,
    Piezo disc on top, 2 op-amp cylinders,
@@ -1174,371 +1245,468 @@ try {
 
 } catch(e){ console.error('HDP 3D error:', e); }
 })();
-
-
-/* ═══════════════════════════════════════
-   HDP CIRCUIT 3D MODEL — Three.js r128
+  /* ═══════════════════════════════════════
+   3D PIEZO ASSEMBLY — Three.js r128
 ═══════════════════════════════════════ */
 (function(){
 try {
-  const canvas = document.getElementById('hdp3d');
-  if(!canvas) return;
-  if(typeof THREE === 'undefined'){ console.warn('Three.js not loaded'); return; }
+const canvas = document.getElementById('piezo3d');
+if(!canvas) return;
+if(typeof THREE === 'undefined') { console.warn('Three.js not loaded'); return; }
 
-  const COMPS = {
-    pcb:      { name:'PCB Board (FR4)',         desc:'1.6mm FR4 fibreglass substrate with copper ground plane. All components are through-hole or SMD mounted on this board. The green solder mask protects copper traces.',                    spec:'Size: 80×60mm · Thickness: 1.6mm · 2-layer',        color:0x1b5e20, emissive:0x0a2a0a },
-    pzt:      { name:'PZT-5H Sensor Disc',       desc:'27mm piezoelectric ceramic disc bonded to the sensing surface. Generates charge Q=d₃₃×F on impact. Connected via two thin wires to the op-amp input.',                              spec:'d₃₃=593 pC/N · C=2nF · Resonance: 72kHz',           color:0xe040fb, emissive:0x440055 },
-    opamp:    { name:'LM358 Op-Amp IC',           desc:'Dual op-amp in DIP-8 package. First stage: unity-gain buffer (high impedance input prevents loading the PZT sensor). Second stage: inverting amplifier with gain set by R-feedback.', spec:'Gain: ×10 · Input Z: >1MΩ · VCC: 5V · DIP-8',       color:0xffd54f, emissive:0x221100 },
-    cap:      { name:'100nF Ceramic Capacitor',  desc:'Charge-sensing capacitor in parallel with Op-Amp input. Converts PZT charge output Q into voltage V=Q/C. Value sets sensitivity — smaller C gives higher voltage but lower frequency response.', spec:'C=100nF · V=Q/C · 50V rated · X7R dielectric',      color:0x4fc3f7, emissive:0x001122 },
-    resistor: { name:'220Ω Resistor',             desc:'Current-limiting resistor in series with the LED alarm output. Limits LED current to safe levels (~20mA at 5V). Also used as bias resistor in the op-amp feedback network.',           spec:'R=220Ω · P=0.25W · Tolerance: ±5%',                 color:0xff8a65, emissive:0x220800 },
-    arduino:  { name:'Arduino Uno (ATmega328)',   desc:'Microcontroller reads the amplified analog signal via its 10-bit ADC (0–5V, 1024 steps = 4.88mV resolution). Runs FFT algorithm to identify frequency components. Triggers LED/buzzer when threshold exceeded.', spec:'ADC: 10-bit · Fs: 9.6kHz · Flash: 32KB',            color:0x00bcd4, emissive:0x003344 },
-    led:      { name:'Red LED Alarm Indicator',   desc:'5mm red LED driven by Arduino digital output pin 13. Illuminates when detected vibration force exceeds the programmed threshold. In full system, also triggers a 5V buzzer module.',   spec:'Vf=2.1V · If=20mA · λ=625nm · driven by D13',      color:0xf44336, emissive:0x330000 },
-    wire:     { name:'PCB Signal Traces',          desc:'Copper tracks on the PCB routing the analog signal from PZT → capacitor → op-amp input → op-amp output → Arduino A0. Track width 0.3mm for signal lines, 0.8mm for power.',         spec:'Cu thickness: 35μm · Width: 0.3mm signal / 0.8mm pwr', color:0x00f5d4, emissive:0x003322 }
-  };
+// ── Renderer ──
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.2;
 
-  // Renderer
-  const renderer = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true});
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-  renderer.shadowMap.enabled = true;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
+function resize(){
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w/h;
+  camera.updateProjectionMatrix();
+}
 
-  function resize(){
-    const w=canvas.clientWidth, h=canvas.clientHeight;
-    renderer.setSize(w,h,false);
-    cam.aspect=w/h; cam.updateProjectionMatrix();
+// ── Camera ──
+const camera = new THREE.PerspectiveCamera(42, 1, 0.01, 100);
+camera.position.set(0, 3.5, 5.5);
+camera.lookAt(0,0,0);
+
+// ── Scene ──
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x020810);
+scene.fog = new THREE.Fog(0x020810, 10, 20);
+
+// ── Lights ──
+const ambient = new THREE.AmbientLight(0x223344, 0.8);
+scene.add(ambient);
+
+const key = new THREE.DirectionalLight(0x00f5d4, 2.0);
+key.position.set(3,5,4);
+key.castShadow = true;
+scene.add(key);
+
+const fill = new THREE.DirectionalLight(0xe040fb, 0.6);
+fill.position.set(-4,2,-3);
+scene.add(fill);
+
+const rim = new THREE.DirectionalLight(0xffd54f, 0.4);
+rim.position.set(0,-3,2);
+scene.add(rim);
+
+// ── Component data ──
+const COMPONENTS = {
+  glass: {
+    name: 'Window Glass Panel',
+    desc: 'Soda-lime silicate glass, 4–6mm thick. Acts as the vibration medium — impact force travels as a stress wave to the bonded PZT disc. Also provides mechanical support for the sensor assembly.',
+    spec: 'Size: 50×50mm · Thickness: 5mm · Young\'s modulus: ~70 GPa',
+    color: 0x4fc3f7, opacity: 0.35, emissive: 0x112233
+  },
+  epoxy: {
+    name: 'Epoxy Adhesive Layer',
+    desc: 'Two-part structural epoxy (e.g. Araldite) bonds the PZT disc to the glass. Critical for efficient stress transfer — poor bonding reduces sensitivity by up to 80%.',
+    spec: 'Thickness: ~0.1mm · Shear modulus: ~1 GPa · Cure: 24h @ RT',
+    color: 0xffd54f, opacity: 0.9, emissive: 0x221100
+  },
+  electrode_b: {
+    name: 'Bottom Silver Electrode',
+    desc: 'Silver-painted electrode screen-printed on the lower face of the PZT disc. Collects negative charge during compression. Connected to circuit ground via the black wire.',
+    spec: 'Material: Ag paste · Thickness: 5–10 μm · Resistivity: <0.01 Ω/sq',
+    color: 0x9e9e9e, opacity: 1.0, emissive: 0x111111
+  },
+  pzt: {
+    name: 'PZT-5H Ceramic Disc',
+    desc: 'Lead Zirconate Titanate — the active element. Under compressive stress, the perovskite crystal lattice deforms, separating the positive and negative ion centres and generating charge Q = d₃₃ × F at the electrode faces.',
+    spec: 'Diameter: 27mm · d₃₃=593 pC/N · Tc=195°C · Density: 7500 kg/m³',
+    color: 0xe040fb, opacity: 1.0, emissive: 0x330044
+  },
+  electrode_t: {
+    name: 'Top Silver Electrode',
+    desc: 'Signal output face of the PZT disc. Collects positive charge during compression. The voltage developed = Q/C where C is the sensor capacitance (~2.0 nF for 27mm disc).',
+    spec: 'Material: Ag paste · Typical output: 0.1–2.0V · Capacitance: ~2 nF',
+    color: 0xe0e0e0, opacity: 1.0, emissive: 0x222222
+  },
+  wire_red: {
+    name: 'Signal Wire (+)',
+    desc: 'Thin coaxial wire soldered to the top electrode. Carries the AC charge signal to the Op-Amp buffer (LM358) input. Shielded to prevent noise pickup.',
+    spec: 'AWG 30 · Impedance: >1 MΩ at sensor · To: LM358 pin 3',
+    color: 0xf44336, opacity: 1.0, emissive: 0x220000
+  },
+  wire_black: {
+    name: 'Ground Wire (−)',
+    desc: 'Connected to the bottom electrode and circuit ground. Completes the charge measurement circuit. Also acts as electrical shield for the signal wire.',
+    spec: 'AWG 30 · Connected to: GND rail · Shield potential: 0V',
+    color: 0x424242, opacity: 1.0, emissive: 0x000000
   }
+};
 
-  const cam = new THREE.PerspectiveCamera(40,1,0.01,100);
-  cam.position.set(0,5,8);
-  cam.lookAt(0,0,0);
+// ── Build geometry ──
+const meshes = {};
+const group = new THREE.Group();
+scene.add(group);
 
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x020810);
-  scene.fog = new THREE.Fog(0x020810,12,22);
-
-  // Lights
-  scene.add(new THREE.AmbientLight(0x223344, 0.9));
-  const key = new THREE.DirectionalLight(0x00f5d4, 1.8);
-  key.position.set(4,6,5); key.castShadow=true; scene.add(key);
-  var fl=new THREE.DirectionalLight(0xe040fb,0.5); fl.position.set(-4,3,-3); scene.add(fl);
-  var rl=new THREE.DirectionalLight(0xffd54f,0.3); rl.position.set(0,-3,2); scene.add(rl);
-
-  const group = new THREE.Group();
-  scene.add(group);
-
-  function mkMat(key){
-    const d=COMPS[key];
-    return new THREE.MeshStandardMaterial({
-      color:d.color, emissive:d.emissive, emissiveIntensity:0.3,
-      metalness: key==='wire'?0.9 : key==='opamp'||key==='arduino'?0.4:0.1,
-      roughness: key==='pcb'?0.8 : key==='wire'?0.1:0.5
-    });
-  }
-
-  const meshes = {};
-  const baseY = {};
-
-  function addMesh(key, geo, x, y, z){
-    const m = new THREE.Mesh(geo, mkMat(key));
-    m.position.set(x,y,z);
-    m.userData.comp = key;
-    m.castShadow = true;
-    m.receiveShadow = true;
-    group.add(m);
-    meshes[key] = m;
-    baseY[key] = y;
-    return m;
-  }
-
-  // PCB board
-  addMesh('pcb', new THREE.BoxGeometry(5.6,0.12,4.0), 0,0,0);
-
-  // PCB grid lines
-  const gridMat = new THREE.LineBasicMaterial({color:0x0d4a0d,transparent:true,opacity:0.6});
-  for(let i=-2.5;i<=2.5;i+=0.5){
-    const g1=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(i,0.07,-2),new THREE.Vector3(i,0.07,2)]);
-    const g2=new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-2.7,0.07,i),new THREE.Vector3(2.7,0.07,i)]);
-    group.add(new THREE.Line(g1,gridMat));
-    group.add(new THREE.Line(g2,gridMat));
-  }
-
-  // PZT disc (on left side of PCB)
-  const pztMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.52,0.52,0.2,48), mkMat('pzt'));
-  pztMesh.position.set(-1.8,0.16,-0.8);
-  pztMesh.userData.comp='pzt';
-  group.add(pztMesh); meshes.pzt=pztMesh; baseY.pzt=0.16;
-  // PZT ring
-  const pztRing = new THREE.Mesh(new THREE.TorusGeometry(0.52,0.04,8,48),
-    new THREE.MeshStandardMaterial({color:0xce3af0,emissive:0x7700aa,emissiveIntensity:0.6}));
-  pztRing.rotation.set(Math.PI/2,0,0);
-  pztRing.position.set(-1.8,0.26,-0.8);
-  pztRing.userData.comp='pzt'; group.add(pztRing);
-
-  // LM358 Op-Amp IC (DIP-8 chip shape)
-  addMesh('opamp', new THREE.BoxGeometry(0.55,0.22,0.95), -0.3,0.17,0.2);
-  // Op-amp notch
-  const notch = new THREE.Mesh(new THREE.SphereGeometry(0.07,8,8),
-    new THREE.MeshStandardMaterial({color:0x333300}));
-  notch.position.set(-0.57,0.22,-0.18); notch.userData.comp='opamp'; group.add(notch);
-  // IC pins
-  for(let i=0;i<4;i++){
-    [-0.6,0.6].forEach(side=>{
-      const pin = new THREE.Mesh(new THREE.BoxGeometry(0.08,0.1,0.05),
-        new THREE.MeshStandardMaterial({color:0xc0c0c0,metalness:0.9,roughness:0.1}));
-      pin.position.set(-0.3+side*0.01, 0.06, -0.34+i*0.22+0.05);
-      pin.userData.comp='opamp'; group.add(pin);
-    });
-  }
-
-  // Capacitor (cylinder, standing up)
-  addMesh('cap', new THREE.CylinderGeometry(0.14,0.14,0.38,24), 0.6,0.25,-0.5);
-  // Cap top stripe
-  const capTop = new THREE.Mesh(new THREE.CylinderGeometry(0.14,0.14,0.05,24),
-    new THREE.MeshStandardMaterial({color:0xcccccc}));
-  capTop.position.set(0.6,0.47,-0.5); capTop.userData.comp='cap'; group.add(capTop);
-
-  // Resistor (small horizontal cylinder)
-  {
-    const rGeo = new THREE.CylinderGeometry(0.07,0.07,0.36,16);
-    const rMesh = new THREE.Mesh(rGeo, mkMat('resistor'));
-    rMesh.rotation.z = Math.PI/2;
-    rMesh.position.set(1.1,0.14,0.4);
-    rMesh.userData.comp = 'resistor';
-    rMesh.castShadow = true;
-    group.add(rMesh);
-    meshes.resistor = rMesh;
-    baseY.resistor = 0.14;
-  }
-  // Resistor bands
-  [0x333300,0xff0000,0xff8800,0xc0a000].forEach((c,i)=>{
-    const band = new THREE.Mesh(new THREE.CylinderGeometry(0.072,0.072,0.04,16),
-      new THREE.MeshStandardMaterial({color:c}));
-    band.rotation.z = Math.PI/2;
-    band.position.set(1.1-0.1+i*0.07, 0.14, 0.4);
-    band.userData.comp='resistor';
-    group.add(band);
+function mat(key){
+  const d = COMPONENTS[key];
+  return new THREE.MeshStandardMaterial({
+    color: d.color,
+    emissive: d.emissive,
+    emissiveIntensity: 0.3,
+    transparent: d.opacity < 1,
+    opacity: d.opacity,
+    metalness: key.includes('electrode') ? 0.8 : key === 'glass' ? 0.1 : 0.05,
+    roughness: key.includes('electrode') ? 0.2 : key === 'glass' ? 0.05 : 0.6,
+    side: key === 'glass' ? THREE.DoubleSide : THREE.FrontSide
   });
+}
 
-  // Arduino Uno (larger board)
-  const arduinoGroup = new THREE.Group();
-  arduinoGroup.position.set(1.2,0.18,0.8);
-  arduinoGroup.userData.comp='arduino';
-  // Main board
-  const arBoard = new THREE.Mesh(new THREE.BoxGeometry(1.7,0.1,1.1),
-    new THREE.MeshStandardMaterial({color:0x005f7a,roughness:0.7}));
-  arBoard.userData.comp='arduino'; arduinoGroup.add(arBoard);
-  // USB port
-  const usb = new THREE.Mesh(new THREE.BoxGeometry(0.22,0.14,0.18),
-    new THREE.MeshStandardMaterial({color:0x888888,metalness:0.8}));
-  usb.position.set(-0.76,0.12,0);
-  usb.userData.comp='arduino'; arduinoGroup.add(usb);
-  // ATmega chip
-  const chip = new THREE.Mesh(new THREE.BoxGeometry(0.45,0.12,0.45),
-    new THREE.MeshStandardMaterial({color:0x111111,roughness:0.3}));
-  chip.position.set(0.2,0.11,0);
-  chip.userData.comp='arduino'; arduinoGroup.add(chip);
-  // Pin headers
-  for(let i=0;i<6;i++){
-    const ph = new THREE.Mesh(new THREE.BoxGeometry(0.06,0.16,0.06),
-      new THREE.MeshStandardMaterial({color:0x888888,metalness:0.9}));
-    ph.position.set(-0.55+i*0.12, 0.15, 0.46);
-    ph.userData.comp='arduino'; arduinoGroup.add(ph);
+// Glass panel (box)
+const glassMesh = new THREE.Mesh(
+  new THREE.BoxGeometry(3.6, 2.4, 0.14),
+  mat('glass')
+);
+glassMesh.userData.comp = 'glass';
+glassMesh.position.set(0, 0, -0.15);
+group.add(glassMesh);
+meshes.glass = glassMesh;
+
+// Grid lines on glass surface
+const gridHelper = new THREE.GridHelper(3.6, 8, 0x1a4a6a, 0x0a2233);
+gridHelper.rotation.x = Math.PI/2;
+gridHelper.position.z = -0.07;
+group.add(gridHelper);
+
+// Epoxy layer (thin disc)
+const epoxyMesh = new THREE.Mesh(
+  new THREE.CylinderGeometry(0.7, 0.7, 0.03, 48),
+  mat('epoxy')
+);
+epoxyMesh.userData.comp = 'epoxy';
+epoxyMesh.rotation.x = Math.PI/2;
+epoxyMesh.position.set(0, 0, 0.0);
+group.add(epoxyMesh);
+meshes.epoxy = epoxyMesh;
+
+// Bottom electrode
+const elBMesh = new THREE.Mesh(
+  new THREE.CylinderGeometry(0.69, 0.69, 0.018, 48),
+  mat('electrode_b')
+);
+elBMesh.userData.comp = 'electrode_b';
+elBMesh.rotation.x = Math.PI/2;
+elBMesh.position.set(0, 0, 0.06);
+group.add(elBMesh);
+meshes.electrode_b = elBMesh;
+
+// PZT disc
+const pztMesh = new THREE.Mesh(
+  new THREE.CylinderGeometry(0.67, 0.67, 0.22, 64),
+  mat('pzt')
+);
+pztMesh.userData.comp = 'pzt';
+pztMesh.rotation.x = Math.PI/2;
+pztMesh.position.set(0, 0, 0.23);
+// Add edge ring
+const ringGeo = new THREE.TorusGeometry(0.67, 0.02, 8, 64);
+const ringMat = new THREE.MeshStandardMaterial({color:0xce3af0, emissive:0x7700aa, emissiveIntensity:0.5});
+const ring = new THREE.Mesh(ringGeo, ringMat);
+ring.userData.comp = 'pzt';
+ring.rotation.x = Math.PI/2;
+ring.position.set(0,0,0.23);
+group.add(ring);
+group.add(pztMesh);
+meshes.pzt = pztMesh;
+
+// Top electrode
+const elTMesh = new THREE.Mesh(
+  new THREE.CylinderGeometry(0.69, 0.69, 0.018, 48),
+  mat('electrode_t')
+);
+elTMesh.userData.comp = 'electrode_t';
+elTMesh.rotation.x = Math.PI/2;
+elTMesh.position.set(0, 0, 0.36);
+group.add(elTMesh);
+meshes.electrode_t = elTMesh;
+
+// Wires (using CylinderGeometry for tubes)
+function makeCurvedWire(color, startX, endX, endY, zStart, comp) {
+  const points = [];
+  for(let i=0;i<=20;i++){
+    const t = i/20;
+    points.push(new THREE.Vector3(
+      startX + (endX-startX)*t,
+      endY * Math.sin(t * Math.PI * 0.5),
+      zStart - t * 0.6
+    ));
   }
-  meshes.arduino = arBoard;
-  baseY.arduino = 0.18;
-  group.add(arduinoGroup);
-  arduinoGroup.userData.comp = 'arduino';
+  const curve = new THREE.CatmullRomCurve3(points);
+  const geo = new THREE.TubeGeometry(curve, 20, 0.025, 8, false);
+  const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
+    color, metalness:0.7, roughness:0.3,
+    emissive: color === 0xf44336 ? 0x220000 : 0x000000
+  }));
+  m.userData.comp = comp;
+  return m;
+}
 
-  // LED (red cylinder)
-  addMesh('led', new THREE.CylinderGeometry(0.1,0.08,0.22,16), 1.8,0.17,1.2);
-  // LED lens dome
-  const dome = new THREE.Mesh(new THREE.SphereGeometry(0.1,16,8,0,Math.PI*2,0,Math.PI/2),
-    new THREE.MeshStandardMaterial({color:0xff1111,emissive:0x440000,emissiveIntensity:0.5,transparent:true,opacity:0.85}));
-  dome.position.set(1.8,0.28,1.2); dome.userData.comp='led'; group.add(dome);
-  // LED glow point light
-  const ledLight = new THREE.PointLight(0xff0000, 0, 1.5);
-  ledLight.position.set(1.8,0.5,1.2);
-  group.add(ledLight);
+const wireRed = makeCurvedWire(0xf44336, 0.3, 1.1, 0.8, 0.37, 'wire_red');
+const wireBlack = makeCurvedWire(0x424242, -0.3, -1.1, -0.8, 0.07, 'wire_black');
+group.add(wireRed);
+group.add(wireBlack);
+meshes.wire_red = wireRed;
+meshes.wire_black = wireBlack;
 
-  // Signal traces (copper lines on PCB)
-  function addTrace(pts, comp){
-    const curve = new THREE.CatmullRomCurve3(pts.map(p=>new THREE.Vector3(...p)));
-    const geo = new THREE.TubeGeometry(curve, pts.length*4, 0.018, 6, false);
-    const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({
-      color:0x00f5d4, emissive:0x003322, emissiveIntensity:0.4, metalness:0.9, roughness:0.1
-    }));
-    m.userData.comp = comp;
-    group.add(m);
-    if(!meshes[comp]) meshes[comp] = m;
+// Solder points
+function soldPt(x, y, z, color, comp){
+  const m = new THREE.Mesh(
+    new THREE.SphereGeometry(0.055, 12, 12),
+    new THREE.MeshStandardMaterial({color, metalness:0.8, roughness:0.2})
+  );
+  m.position.set(x,y,z);
+  m.userData.comp = comp;
+  group.add(m);
+}
+soldPt(0.3, 0, 0.37, 0xf44336, 'wire_red');
+soldPt(-0.3, 0, 0.07, 0x424242, 'wire_black');
+
+// Dimension arrows (thin lines)
+const arrowMat = new THREE.LineBasicMaterial({color:0x00f5d4, transparent:true, opacity:0.35});
+function addArrow(x1,y1,z1,x2,y2,z2){
+  const geo = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(x1,y1,z1), new THREE.Vector3(x2,y2,z2)
+  ]);
+  scene.add(new THREE.Line(geo, arrowMat));
+}
+addArrow(-2.1,-1.35,-0.15, -2.1,1.35,-0.15);  // glass height
+addArrow(-2.1,-1.35,-0.15, 2.1,-1.35,-0.15);   // glass width
+
+// ── BASE POSITIONS (for explode/collapse) ──
+const baseZ = {
+  glass: -0.15, epoxy: 0.0, electrode_b: 0.06,
+  pzt: 0.23, electrode_t: 0.36
+};
+
+// ── Mouse / orbit ──
+let isDragging = false, lastX = 0, lastY = 0;
+let rotY = 0.4, rotX = 0.25;
+let targetRotY = 0.4, targetRotX = 0.25;
+let zoom = 1.0, targetZoom = 1.0;
+let exploded = false;
+
+canvas.addEventListener('mousedown', e => { isDragging=true; lastX=e.clientX; lastY=e.clientY; canvas.style.cursor='grabbing'; });
+canvas.addEventListener('mouseup', () => { isDragging=false; canvas.style.cursor='grab'; });
+canvas.addEventListener('mouseleave', () => { isDragging=false; canvas.style.cursor='grab'; });
+canvas.addEventListener('mousemove', e => {
+  if(isDragging){
+    targetRotY += (e.clientX - lastX) * 0.008;
+    targetRotX += (e.clientY - lastY) * 0.008;
+    targetRotX = Math.max(-1.1, Math.min(1.1, targetRotX));
+    lastX=e.clientX; lastY=e.clientY;
   }
+  handleHover(e);
+});
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  targetZoom = Math.max(0.5, Math.min(2.2, targetZoom + e.deltaY * 0.001));
+}, {passive:false});
 
-  // PZT → Cap → Op-amp trace
-  addTrace([[-1.8,0.07,-0.8],[-1.0,0.07,-0.6],[0.6,0.07,-0.5],[0.6,0.07,-0.1],[-0.3,0.07,0.0]], 'wire');
-  // Op-amp → Arduino trace
-  addTrace([[-0.3,0.07,0.5],[0.3,0.07,0.7],[1.2,0.07,0.8]], 'wire');
-  // Arduino → LED trace
-  addTrace([[1.2,0.07,1.2],[1.5,0.07,1.2],[1.8,0.07,1.2]], 'wire');
-  // GND trace
-  addTrace([[2.2,0.07,-1.5],[2.2,0.07,1.5]], 'wire');
-  // Power trace
-  addTrace([[-2.5,0.07,-1.5],[-2.5,0.07,1.5]], 'wire');
+// Touch
+canvas.addEventListener('touchstart', e => { lastX=e.touches[0].clientX; lastY=e.touches[0].clientY; });
+canvas.addEventListener('touchmove', e => {
+  e.preventDefault();
+  targetRotY += (e.touches[0].clientX - lastX) * 0.008;
+  targetRotX += (e.touches[0].clientY - lastY) * 0.008;
+  lastX=e.touches[0].clientX; lastY=e.touches[0].clientY;
+},{passive:false});
 
-  // Component labels (floating text via sprites)
-  function addLabel(text, x, y, z, color){
-    const c2 = document.createElement('canvas');
-    c2.width=200; c2.height=60;
-    const cx = c2.getContext('2d');
-    cx.fillStyle='rgba(2,8,16,0.85)';
-    cx.roundRect(2,2,196,56,8); cx.fill();
-    cx.strokeStyle=color; cx.lineWidth=1.5;
-    cx.roundRect(2,2,196,56,8); cx.stroke();
-    cx.fillStyle=color;
-    cx.font='bold 22px Orbitron,monospace';
-    cx.textAlign='center'; cx.textBaseline='middle';
-    cx.fillText(text, 100, 30);
-    const tex = new THREE.CanvasTexture(c2);
-    const sprite = new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true}));
-    sprite.position.set(x,y,z);
-    sprite.scale.set(0.7,0.21,1);
-    group.add(sprite);
-  }
-  addLabel('PZT', -1.8, 0.65, -0.8, '#e040fb');
-  addLabel('LM358', -0.3, 0.65, 0.2, '#ffd54f');
-  addLabel('100nF', 0.6, 0.75, -0.5, '#4fc3f7');
-  addLabel('220Ω', 1.1, 0.55, 0.4, '#ff8a65');
-  addLabel('ARDUINO', 1.2, 0.8, 0.8, '#00bcd4');
-  addLabel('LED', 1.8, 0.65, 1.2, '#f44336');
+// ── Raycasting / hover ──
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+const tooltip = document.getElementById('p3d-tooltip');
+const ttName = document.getElementById('p3d-tt-name');
+const ttDesc = document.getElementById('p3d-tt-desc');
+const ttSpec = document.getElementById('p3d-tt-spec');
+let hoveredComp = null;
+const originalEmissive = {};
 
-  // Hover / raycasting
-  const raycaster = new THREE.Raycaster();
-  const mouse = new THREE.Vector2();
-  const tooltip = document.getElementById('hdp-tooltip');
-  const ttName = document.getElementById('hdp-tt-name');
-  const ttDesc = document.getElementById('hdp-tt-desc');
-  const ttSpec = document.getElementById('hdp-tt-spec');
-  let hovComp = null;
+Object.keys(meshes).forEach(k => {
+  const m = meshes[k];
+  if(m.material) originalEmissive[k] = m.material.emissiveIntensity || 0.3;
+});
 
-  function setHL(comp, on){
-    group.traverse(c=>{
-      if(c.isMesh && c.userData.comp===comp && c.material){
-        c.material.emissiveIntensity = on ? 1.0 : 0.3;
-        if(on) c.material.emissive.set(COMPS[comp]?.color||0xffffff);
-      }
-    });
-    if(comp==='led') ledLight.intensity = on ? 2.0 : 0;
-  }
+function handleHover(e){
+  const rect = canvas.getBoundingClientRect();
+  mouse.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+  mouse.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
 
-  function showTT(e, comp){
-    const d=COMPS[comp]; if(!d) return;
-    ttName.textContent=d.name; ttDesc.textContent=d.desc; ttSpec.textContent=d.spec;
-    tooltip.style.display='block';
-    const rect=canvas.getBoundingClientRect();
-    let tx = e.clientX-rect.left+14, ty = e.clientY-rect.top-20;
-    tooltip.style.left=tx+'px'; tooltip.style.top=ty+'px';
-  }
+  raycaster.setFromCamera(mouse, camera);
+  const allMeshes = [];
+  group.traverse(c => { if(c.isMesh && c.userData.comp) allMeshes.push(c); });
+  const hits = raycaster.intersectObjects(allMeshes);
 
-  canvas.addEventListener('mousemove', e=>{
-    if(isDrag){ 
-      tRotY+=(e.clientX-lastX)*0.007; tRotX+=(e.clientY-lastY)*0.007;
-      tRotX=Math.max(-1,Math.min(1,tRotX));
-      lastX=e.clientX; lastY=e.clientY; return;
+  if(hits.length > 0){
+    const comp = hits[0].object.userData.comp;
+    if(comp !== hoveredComp){
+      // Reset old
+      if(hoveredComp) setHighlight(hoveredComp, false);
+      hoveredComp = comp;
+      setHighlight(comp, true);
+      showTooltip(e, comp);
     }
-    const rect=canvas.getBoundingClientRect();
-    mouse.x=((e.clientX-rect.left)/rect.width)*2-1;
-    mouse.y=-((e.clientY-rect.top)/rect.height)*2+1;
-    raycaster.setFromCamera(mouse,cam);
-    const hits=raycaster.intersectObjects(group.children.filter(c=>c.isMesh&&c.userData.comp));
-    if(hits.length){
-      const comp=hits[0].object.userData.comp;
-      if(comp!==hovComp){ if(hovComp) setHL(hovComp,false); hovComp=comp; setHL(comp,true); }
-      showTT(e,comp);
-      // reposition tooltip
-      const rect2=canvas.getBoundingClientRect();
-      const tt=tooltip.getBoundingClientRect();
-      let tx=e.clientX-rect2.left+14, ty=e.clientY-rect2.top-20;
-      if(tx+230>rect2.width) tx=e.clientX-rect2.left-234;
-      if(ty+tt.height>rect2.height) ty=e.clientY-rect2.top-tt.height-10;
-      tooltip.style.left=tx+'px'; tooltip.style.top=ty+'px';
-    } else {
-      if(hovComp){setHL(hovComp,false);hovComp=null;}
-      tooltip.style.display='none';
+    // Update tooltip position
+    tooltip.style.left = (e.clientX - canvas.getBoundingClientRect().left + 14) + 'px';
+    tooltip.style.top  = (e.clientY - canvas.getBoundingClientRect().top  - 20) + 'px';
+    // Keep within bounds
+    const tRect = tooltip.getBoundingClientRect();
+    const cRect = canvas.getBoundingClientRect();
+    if(tRect.right > cRect.right - 10) tooltip.style.left = (e.clientX - cRect.left - 230) + 'px';
+    if(tRect.bottom > cRect.bottom - 10) tooltip.style.top = (e.clientY - cRect.top - tRect.height - 10) + 'px';
+  } else {
+    if(hoveredComp){ setHighlight(hoveredComp, false); hoveredComp=null; }
+    tooltip.style.display='none';
+  }
+  // Update legend highlights
+  document.querySelectorAll('.p3d-leg').forEach(el => {
+    el.classList.toggle('active', el.dataset.comp === hoveredComp);
+  });
+}
+
+function setHighlight(comp, on){
+  group.traverse(c => {
+    if(c.isMesh && c.userData.comp === comp && c.material){
+      c.material.emissiveIntensity = on ? 0.85 : 0.3;
+      if(on) c.material.emissive.set(COMPONENTS[comp]?.color || 0xffffff);
     }
-    document.querySelectorAll('.hdp-leg').forEach(el=>el.classList.toggle('active',el.dataset.comp===hovComp));
   });
+}
 
-  let isDrag=false,lastX=0,lastY=0,tRotY=0.3,tRotX=0.35,rotY=0.3,rotX=0.35,tZoom=1,zoom=1;
-  canvas.addEventListener('mousedown', e=>{isDrag=true;lastX=e.clientX;lastY=e.clientY;canvas.style.cursor='grabbing';});
-  canvas.addEventListener('mouseup', ()=>{isDrag=false;canvas.style.cursor='grab';});
-  canvas.addEventListener('mouseleave', ()=>{isDrag=false;canvas.style.cursor='grab';});
-  canvas.addEventListener('wheel', e=>{e.preventDefault();tZoom=Math.max(0.4,Math.min(2.5,tZoom+e.deltaY*0.001));},{passive:false});
+function showTooltip(e, comp){
+  const d = COMPONENTS[comp];
+  if(!d) return;
+  ttName.textContent = d.name;
+  ttDesc.textContent = d.desc;
+  ttSpec.textContent = d.spec;
+  tooltip.style.display = 'block';
+}
 
-  // Legend hover
-  document.querySelectorAll('.hdp-leg').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{
-      if(hovComp) setHL(hovComp,false);
-      hovComp=el.dataset.comp; setHL(hovComp,true);
-      const d=COMPS[hovComp];
-      if(d){ttName.textContent=d.name;ttDesc.textContent=d.desc;ttSpec.textContent=d.spec;
-        tooltip.style.display='block';tooltip.style.left='10px';tooltip.style.top='10px';}
-    });
-    el.addEventListener('mouseleave',()=>{
-      setHL(el.dataset.comp,false);hovComp=null;
-      tooltip.style.display='none';
-      document.querySelectorAll('.hdp-leg').forEach(e=>e.classList.remove('active'));
-    });
+// Legend hover
+document.querySelectorAll('.p3d-leg').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    const comp = el.dataset.comp;
+    if(hoveredComp && hoveredComp !== comp) setHighlight(hoveredComp, false);
+    hoveredComp = comp;
+    setHighlight(comp, true);
+    const d = COMPONENTS[comp];
+    if(d){
+      ttName.textContent = d.name;
+      ttDesc.textContent = d.desc;
+      ttSpec.textContent = d.spec;
+      tooltip.style.display = 'block';
+      tooltip.style.left = '10px';
+      tooltip.style.top = '10px';
+    }
   });
+  el.addEventListener('mouseleave', () => {
+    setHighlight(el.dataset.comp, false);
+    hoveredComp = null;
+    tooltip.style.display='none';
+    document.querySelectorAll('.p3d-leg').forEach(e => e.classList.remove('active'));
+  });
+});
 
-  // Explode
-  let exploded=false;
-  const explodeOffsets={pcb:0,pzt:1.2,opamp:0.8,cap:0.6,resistor:0.5,arduino:1.0,led:0.7,wire:0};
-  document.getElementById('hdp-explode').addEventListener('click',function(){
-    exploded=!exploded;
-    this.textContent=exploded?'⊟ COLLAPSE VIEW':'⊞ EXPLODE VIEW';
-    group.traverse(c=>{
-      if(c.isMesh&&c.userData.comp&&explodeOffsets[c.userData.comp]!==undefined){
-        c.userData.targetY=(baseY[c.userData.comp]||0)+(exploded?explodeOffsets[c.userData.comp]:0);
+// ── Explode button ──
+document.getElementById('p3d-explode').addEventListener('click', function(){
+  exploded = !exploded;
+  this.textContent = exploded ? '⊟ COLLAPSE VIEW' : '⊞ EXPLODE VIEW';
+  const spread = exploded ? 1 : 0;
+  const offsets = {glass:-0.8, epoxy:-0.3, electrode_b:0, pzt:0.4, electrode_t:0.85};
+  Object.keys(baseZ).forEach(k => {
+    if(meshes[k]){
+      const target = baseZ[k] + (spread * offsets[k]);
+      meshes[k].userData.targetZ = target;
+    }
+  });
+});
+
+document.getElementById('p3d-reset').addEventListener('click', () => {
+  targetRotY = 0.4; targetRotX = 0.25; targetZoom = 1.0;
+});
+
+// ── Particle system (floating ions) ──
+const particleCount = 80;
+const pGeo = new THREE.BufferGeometry();
+const pPos = new Float32Array(particleCount * 3);
+const pVel = [];
+for(let i=0;i<particleCount;i++){
+  pPos[i*3]   = (Math.random()-0.5)*4;
+  pPos[i*3+1] = (Math.random()-0.5)*3;
+  pPos[i*3+2] = (Math.random()-0.5)*1.5;
+  pVel.push({x:(Math.random()-.5)*.005, y:(Math.random()-.5)*.005});
+}
+pGeo.setAttribute('position', new THREE.BufferAttribute(pPos,3));
+const pMat = new THREE.PointsMaterial({
+  color:0x00f5d4, size:0.025, transparent:true, opacity:0.4,
+  blending: THREE.AdditiveBlending
+});
+const particles = new THREE.Points(pGeo, pMat);
+scene.add(particles);
+
+// ── Animation loop ──
+let t = 0;
+function animate(){
+  requestAnimationFrame(animate);
+  t += 0.016;
+
+  // Smooth rotation
+  rotY += (targetRotY - rotY) * 0.08;
+  rotX += (targetRotX - rotX) * 0.08;
+  zoom += (targetZoom - zoom) * 0.08;
+  group.rotation.y = rotY;
+  group.rotation.x = rotX;
+  camera.position.setLength(6.5 / zoom);
+  camera.lookAt(0,0,0);
+
+  // Smooth explode
+  Object.keys(meshes).forEach(k => {
+    const m = meshes[k];
+    if(m && m.userData.targetZ !== undefined){
+      if(k === 'pzt') {
+        m.position.z += (m.userData.targetZ - m.position.z) * 0.07;
+        ring.position.z = m.position.z;
+      } else {
+        m.position.z += (m.userData.targetZ - m.position.z) * 0.07;
       }
-    });
-    // Move arduino group
-    arduinoGroup.userData.targetY=(exploded?1.0:0);
+    }
   });
-  document.getElementById('hdp-reset').addEventListener('click',()=>{tRotY=0.3;tRotX=0.35;tZoom=1;});
 
-  // Animate
-  let t=0;
-  function animate(){
-    requestAnimationFrame(animate);
-    t+=0.016;
-    rotY+=(tRotY-rotY)*0.08; rotX+=(tRotX-rotX)*0.08; zoom+=(tZoom-zoom)*0.08;
-    group.rotation.y=rotY; group.rotation.x=rotX;
-    cam.position.setLength(9/zoom); cam.lookAt(0,0,0);
-
-    // Smooth explode
-    group.traverse(c=>{
-      if(c.isMesh&&c.userData.targetY!==undefined)
-        c.position.y+=(c.userData.targetY-c.position.y)*0.07;
-    });
-    if(arduinoGroup.userData.targetY!==undefined)
-      arduinoGroup.position.y+=(arduinoGroup.userData.targetY-arduinoGroup.position.y)*0.07;
-
-    // LED pulse
-    ledLight.intensity+=(0-ledLight.intensity)*0.05;
-
-    // Idle sway
-    if(!isDrag) tRotY+=Math.sin(t*0.12)*0.0006;
-
-    renderer.render(scene,cam);
+  // Gentle idle sway when not dragging
+  if(!isDragging){
+    targetRotY += Math.sin(t * 0.15) * 0.0008;
   }
 
-  resize();
-  window.addEventListener('resize',resize);
-  animate();
-  setTimeout(()=>{const hint=document.getElementById('hdp-hint');if(hint)hint.style.opacity='0';},4000);
+  // Particle drift
+  const pos = pGeo.attributes.position.array;
+  for(let i=0;i<particleCount;i++){
+    pos[i*3]   += pVel[i].x;
+    pos[i*3+1] += pVel[i].y;
+    if(Math.abs(pos[i*3])>2.2)   pVel[i].x *= -1;
+    if(Math.abs(pos[i*3+1])>1.6) pVel[i].y *= -1;
+  }
+  pGeo.attributes.position.needsUpdate = true;
 
-} catch(e){ console.error('HDP 3D error:',e); }
+  renderer.render(scene, camera);
+}
+
+resize();
+window.addEventListener('resize', resize);
+animate();
+
+// Hide hint after 4s
+setTimeout(()=>{ const h=document.getElementById('p3d-hint'); if(h) h.style.opacity='0'; }, 4000);
+
+} catch(e){ console.error("3D Piezo error:",e); }
 })();
-  
 });
 </script>
 </body>
